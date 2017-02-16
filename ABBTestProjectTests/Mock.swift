@@ -21,6 +21,7 @@ class ForecastsServiceMock: ForecastSerivce {
 class ForecastMock: NSObject, ForecastView {
     var setForecastsCalled = false
     var setPlaceholderCalled = false
+    var forecasts: [ForecastViewData]?
     
     func startLoading() {
         
@@ -29,6 +30,7 @@ class ForecastMock: NSObject, ForecastView {
         
     }
     func setForecasts(_ forecasts: [ForecastViewData]) {
+        self.forecasts = forecasts
         setForecastsCalled = true
 
     }

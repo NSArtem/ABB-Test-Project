@@ -1,0 +1,1 @@
+xcodebuild test -project ABBTestProject.xcodeproj -scheme ABBTestProject -destination 'platform=iOS,name=Stellaris'

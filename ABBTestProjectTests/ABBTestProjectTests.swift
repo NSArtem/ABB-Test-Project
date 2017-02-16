@@ -9,28 +9,44 @@
 import XCTest
 @testable import ABBTestProject
 
-class ABBTestProjectTests: XCTestCase {
+class ForecastsTests: XCTestCase {
+    
+    let emptyForecastsMock = ForecastsServiceMock(forecasts: [Forecast]())
+    let testForecastsServiceMock = ForecastsServiceMock(forecasts: [Forecast(city: "Test cti", temperature: "1", condition: "Cloudy")])
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testPresenter() {
+        //given
+        let forecastViewMock = ForecastMock()
+        let forecastsUnderTest = ForecastPresenter(service: testForecastsServiceMock)
+        forecastsUnderTest.attachView(forecastViewMock)
+        
+        //when
+        forecastsUnderTest.getForecasts()
+        
+        //verify
+        XCTAssertTrue(forecastViewMock.setForecastsCalled)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testEmptyDataSet() {
+        //given
+        let forecastViewMock = ForecastMock()
+        let forecastsUnderTest = ForecastPresenter(service: emptyForecastsMock)
+        forecastsUnderTest.attachView(forecastViewMock)
+        
+        //when
+        forecastsUnderTest.getForecasts()
+        
+        //verify
+        XCTAssertTrue(forecastViewMock.setPlaceholderCalled)
     }
     
 }

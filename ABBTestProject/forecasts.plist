@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>temperature</key>
+		<string>4</string>
+		<key>city</key>
+		<string>London</string>
+		<key>condition</key>
+		<string>Rain</string>
+	</dict>
+	<dict>
+		<key>temperature</key>
+		<string>15</string>
+		<key>city</key>
+		<string>Madrid</string>
+		<key>condition</key>
+		<string>Clouds</string>
+	</dict>
+	<dict>
+		<key>temperature</key>
+		<string>-3</string>
+		<key>city</key>
+		<string>Helsinki</string>
+		<key>condition</key>
+		<string>Clear</string>
+	</dict>
+	<dict>
+		<key>temperature</key>
+		<string>2</string>
+		<key>city</key>
+		<string>Berlin</string>
+		<key>condition</key>
+		<string>Clear</string>
+	</dict>
+	<dict>
+		<key>temperature</key>
+		<string>5</string>
+		<key>city</key>
+		<string>Paris</string>
+		<key>condition</key>
+		<string>Clouds</string>
+	</dict>
+	<dict>
+		<key>temperature</key>
+		<string>12</string>
+		<key>city</key>
+		<string>Rome</string>
+		<key>condition</key>
+		<string>Rain</string>
+	</dict>
+</array>
+</plist>
